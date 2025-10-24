@@ -4,9 +4,11 @@ import { getThemeColors } from "@/lib/themes";
 import type { Album } from "../lib/ListTypes";
 import { Box, Card, Image, Text, Badge, Group } from "@mantine/core";
 import { Link } from "next-view-transitions";
+import { useState } from "react";
 
 export default function AlbumCard({ album }: { album: Album }) {
 	const { label, releaseDate, image, tracks } = album;
+	const [isElevated, setIsElevated] = useState(false);
 
 	type Songs = {
 		count: number;
@@ -29,16 +31,21 @@ export default function AlbumCard({ album }: { album: Album }) {
 				boxShadow: `0 4px 20px ${theme.primary.DEFAULT}20`,
 				overflow: "hidden",
 				borderRadius: "8px",
+				zIndex: isElevated ? 50 : 1,
 			}}
-			className="group relative col-span-1 cursor-pointer rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+			className="group relative col-span-1 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
 		>
 			<Card
 				component={Link}
 				href={`/album/${album.id}`}
+				className="cursor-pointer"
 				style={{
 					background: theme.background.gradient,
 					viewTransitionName: `album-card-background-${album.id}`,
 				}}
+				onMouseEnter={() => setIsElevated(true)}
+				onMouseLeave={() => setIsElevated(false)}
+				onClick={() => setIsElevated(true)}
 			>
 				<Box
 					className="relative overflow-hidden rounded-lg"
