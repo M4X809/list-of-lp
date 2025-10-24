@@ -5,6 +5,9 @@ export type Track = {
 	studioUrl: string | null;
 	emilyLiveUrl: string | null;
 	lpLiveUrl: string | null;
+
+	// this is the spotify url for the album
+	__SPOTIFY_URL__: string;
 };
 
 export type Album = {

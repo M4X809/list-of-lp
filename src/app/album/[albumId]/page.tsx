@@ -39,7 +39,7 @@ export default async function AlbumDetail({ params }: { params: Promise<{ albumI
 	const theme = getThemeColors(albumId);
 
 	return (
-		<Box className="min-h-screen bg-gray-900">
+		<Box className="min-h-screen">
 			<Container size="xl" className="py-12">
 				{/* Back Button */}
 				<BackButton />
@@ -75,69 +75,6 @@ export default async function AlbumDetail({ params }: { params: Promise<{ albumI
 						<Text className="text-gray-400">{album.description}</Text>
 					</GridCol>
 				</Grid>
-
-				{/* Album Header */}
-				{/* <Box className="mb-12 grid grid-cols-1 gap-12 lg:grid-cols-3">
-					{/* Album Cover */}
-				{/* <Box className="lg:col-span-1">
-					<Card className="overflow-hidden border border-gray-700 bg-gray-800/50 backdrop-blur-sm">
-						<Image
-							src={album.image}
-							alt={album.label}
-							width={250}
-							height={250}
-							className="transition-all duration-700 ease-out"
-						/>
-					</Card>
-				</Box> */}
-
-				{/* Album Info */}
-				{/* <Box className="space-y-6 lg:col-span-2">
-					<Stack gap="md">
-						<Title order={1} className="text-6xl font-bold text-white">
-							{album.label}
-						</Title>
-
-						<Text size="xl" className="text-gray-400">
-							Released:{" "}
-							{new Date(album.releaseDate).toLocaleDateString("en-US", {
-								year: "numeric",
-								month: "long",
-								day: "numeric",
-							})}
-						</Text>
-
-						<Group gap="md">
-							<Badge
-								size="lg"
-								style={{
-									backgroundColor: theme.primary,
-									color: "white",
-								}}
-							>
-								{album.tracks.length} Songs
-							</Badge>
-							<Badge
-								size="lg"
-								variant="light"
-								style={{
-									backgroundColor: `${theme.secondary}20`,
-									color: theme.secondary,
-									borderColor: theme.secondary,
-								}}
-							>
-								Linkin Park
-							</Badge>
-						</Group>
-					</Stack>
-
-					<Divider color={theme.primary} />
-
-					<Text size="lg" className="leading-relaxed text-gray-300">
-						{album.description}
-					</Text>
-				</Box> */}
-				{/* </Box> */}
 
 				{/* Track List */}
 				{album.tracks.length > 0 && (
