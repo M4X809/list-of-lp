@@ -1,6 +1,6 @@
 import "@mantine/core/styles.css";
 import "../index.css";
-import { MantineProvider, ColorSchemeScript } from "@mantine/core";
+import { MantineProvider } from "@mantine/core";
 import { ViewTransitions } from "next-view-transitions";
 import { Nunito } from "next/font/google";
 

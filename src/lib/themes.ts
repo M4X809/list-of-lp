@@ -1,25 +1,205 @@
-export const getThemeColors = (albumId: string) => {
+export interface AlbumTheme {
+	// Primary color palette
+	primary: {
+		DEFAULT: string;
+		light: string;
+		dark: string;
+		100: string;
+		500: string;
+		900: string;
+	};
+	// Secondary color palette
+	secondary: {
+		DEFAULT: string;
+		light: string;
+		dark: string;
+	};
+	// Accent colors
+	accent: {
+		DEFAULT: string;
+		light: string;
+		dark: string;
+	};
+	// Background variations
+	background: {
+		primary: string;
+		secondary: string;
+		tertiary: string;
+		gradient: string;
+	};
+	// Text colors
+	text: {
+		primary: string;
+		secondary: string;
+		muted: string;
+		contrast: string;
+	};
+	// Border colors
+	border: {
+		DEFAULT: string;
+		light: string;
+		focus: string;
+	};
+	// Badge colors
+	badges: {
+		studio: string;
+		liveEmily: string;
+		liveLP: string;
+	};
+	// Card styling
+	card: {
+		background: string;
+		backgroundHover: string;
+		border: string;
+	};
+}
+
+const themes: Record<string, AlbumTheme> = {
+	"hybrid-theory": {
+		primary: {
+			DEFAULT: "#47090E",
+			light: "#95121d",
+			dark: "#1F0506",
+			100: "#f6b3b8",
+			500: "#47090E",
+			900: "#0f0203",
+		},
+		secondary: {
+			DEFAULT: "#8C786C",
+			light: "#bbaea7",
+			dark: "#554841",
+		},
+		accent: {
+			DEFAULT: "#ec6672",
+			light: "#f6b3b8",
+			dark: "#95121d",
+		},
+		background: {
+			primary: "#050404",
+			secondary: "#1F0506",
+			tertiary: "#3D3D39",
+			gradient: "linear-gradient(135deg, #050404 0%, #47090E 50%, #1F0506 100%)",
+		},
+		text: {
+			primary: "#e8e4e2",
+			secondary: "#d2c9c4",
+			muted: "#a49389",
+			contrast: "#ffffff",
+		},
+		border: {
+			DEFAULT: "#3D3D39",
+			light: "#8C786C",
+			focus: "#47090E",
+		},
+		badges: {
+			studio: "#95121d",
+			liveEmily: "#ec6672",
+			liveLP: "#8C786C",
+		},
+		card: {
+			background: "rgba(61, 61, 57, 0.3)",
+			backgroundHover: "rgba(71, 9, 14, 0.4)",
+			border: "#3D3D39",
+		},
+	},
+	meteora: {
+		primary: {
+			DEFAULT: "#8B7B65",
+			light: "#9A8B71",
+			dark: "#55493C",
+			100: "#ebe8e2",
+			500: "#8B7B65",
+			900: "#1c1914",
+		},
+		secondary: {
+			DEFAULT: "#9A8B71",
+			light: "#c2b9a9",
+			dark: "#7c6f58",
+		},
+		accent: {
+			DEFAULT: "#bbb0a1",
+			light: "#d6d0c6",
+			dark: "#a4917e",
+		},
+		background: {
+			primary: "#241C16",
+			secondary: "#32271F",
+			tertiary: "#55493C",
+			gradient: "linear-gradient(135deg, #241C16 0%, #32271F 50%, #55493C 100%)",
+		},
+		text: {
+			primary: "#e8e5e0",
+			secondary: "#d2cac0",
+			muted: "#a49682",
+			contrast: "#ffffff",
+		},
+		border: {
+			DEFAULT: "#55493C",
+			light: "#8B7B65",
+			focus: "#9A8B71",
+		},
+		badges: {
+			studio: "#8B7B65",
+			liveEmily: "#bbb0a1",
+			liveLP: "#9A8B71",
+		},
+		card: {
+			background: "rgba(85, 73, 60, 0.3)",
+			backgroundHover: "rgba(139, 123, 101, 0.4)",
+			border: "#55493C",
+		},
+	},
+	"minutes-to-midnight": {
+		primary: {
+			DEFAULT: "#77716F",
+			light: "#A09D9C",
+			dark: "#292527",
+			100: "#fafafa",
+			500: "#77716F",
+			900: "#181716",
+		},
+		secondary: {
+			DEFAULT: "#A09D9C",
+			light: "#c6c4c4",
+			dark: "#615e5d",
+		},
+		accent: {
+			DEFAULT: "#928d8b",
+			light: "#b3b1b0",
+			dark: "#5f5a59",
+		},
+		background: {
+			primary: "#292527",
+			secondary: "#2f2d2d",
+			tertiary: "#474443",
+			gradient: "linear-gradient(135deg, #292527 0%, #474443 50%, #5f5a59 100%)",
+		},
+		text: {
+			primary: "#F2F1F0",
+			secondary: "#d9d8d7",
+			muted: "#b3b1b0",
+			contrast: "#FEFFFC",
+		},
+		border: {
+			DEFAULT: "#474443",
+			light: "#77716F",
+			focus: "#A09D9C",
+		},
+		badges: {
+			studio: "#77716F",
+			liveEmily: "#928d8b",
+			liveLP: "#A09D9C",
+		},
+		card: {
+			background: "rgba(71, 68, 67, 0.3)",
+			backgroundHover: "rgba(119, 113, 111, 0.4)",
+			border: "#474443",
+		},
+	},
+};
+
+export const getThemeColors = (albumId: string): AlbumTheme => {
 	return themes[albumId] || themes["hybrid-theory"];
 };
 
-const themes: Record<string, { primary: string; secondary: string; accent: string; bg: string }> = {
-	"hybrid-theory": {
-		primary: "#ff6b35",
-		secondary: "#f7931e",
-		accent: "#ff1744",
-		bg: "from-orange-900 via-red-900 to-orange-800",
-	},
-	meteora: {
-		primary: "#8b5cf6",
-		secondary: "#a855f7",
-		accent: "#ec4899",
-		bg: "from-purple-900 via-pink-900 to-purple-800",
-	},
-	"minutes-to-midnight": {
-		primary: "#1e40af",
-		secondary: "#3b82f6",
-		accent: "#06b6d4",
-		bg: "from-slate-900 via-blue-900 to-slate-800",
-	},
-};
-export type Theme = (typeof themes)["hybrid-theory"];
+export type Theme = AlbumTheme;

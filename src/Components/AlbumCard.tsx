@@ -23,60 +23,108 @@ export default function AlbumCard({ album }: { album: Album }) {
 	const theme = getThemeColors(album.id);
 
 	return (
-		<Card
-			component={Link}
-			href={`/album/${album.id}`}
-			className="group col-span-1 cursor-pointer border border-gray-700 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-gray-800/70 hover:shadow-2xl hover:shadow-black/20"
+		<div
 			style={{
-				background: `linear-gradient(to bottom, ${theme.bg})`,
+				border: `1px solid ${theme.border.DEFAULT}`,
+				boxShadow: `0 4px 20px ${theme.primary.DEFAULT}20`,
+				overflow: "hidden",
+				borderRadius: "8px",
 			}}
+			className="group relative col-span-1 cursor-pointer rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
 		>
-			<Box className="relative overflow-hidden rounded-lg">
-				<Image
-					src={image}
-					alt={label}
-					radius="md"
-					className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-110"
-					style={{ viewTransitionName: `album-card-image-${album.id}` }}
-				/>
-				<Box className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-			</Box>
-
-			<Box className="space-y-3 p-4">
-				<Text
-					size="xl"
-					fw={700}
-					className="text-white transition-colors group-hover:text-purple-300"
-					style={{ viewTransitionName: `album-card-title-${album.id}` }}
+			<Card
+				component={Link}
+				href={`/album/${album.id}`}
+				style={{
+					background: theme.background.gradient,
+					viewTransitionName: `album-card-background-${album.id}`,
+				}}
+			>
+				<Box
+					className="relative overflow-hidden rounded-lg"
+					style={{
+						border: `2px solid ${theme.border.light}`,
+						borderRadius: "8px",
+						padding: "2px",
+						background: theme.background.secondary,
+						viewTransitionName: `album-card-image-${album.id}`,
+					}}
 				>
-					{label}
-				</Text>
+					<Box>
+						<Image
+							src={image}
+							alt={label}
+							radius="md"
+							className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-110"
+						/>
+					</Box>
+				</Box>
+				<Box className="space-y-3 p-4">
+					<Text
+						size="xl"
+						fw={700}
+						className="transition-colors"
+						style={{
+							viewTransitionName: `album-card-title-${album.id}`,
+							color: theme.text.primary,
+						}}
+					>
+						{label}
+					</Text>
 
-				<Text size="sm" className="text-gray-400" style={{ viewTransitionName: `album-card-release-date-${album.id}` }}>
-					Released:{" "}
-					{new Date(releaseDate).toLocaleDateString("en-US", {
-						year: "numeric",
-						month: "long",
-						day: "numeric",
-					})}
-				</Text>
+					<Text
+						size="sm"
+						style={{
+							viewTransitionName: `album-card-release-date-${album.id}`,
+							color: theme.text.secondary,
+						}}
+					>
+						<span style={{ color: theme.accent.DEFAULT, fontWeight: 600 }}>Released: </span>
+						{new Date(releaseDate).toLocaleDateString("en-US", {
+							year: "numeric",
+							month: "long",
+							day: "numeric",
+						})}
+					</Text>
 
-				<Group gap="xs">
-					<Badge color="purple" variant="light" size="sm" className="bg-purple-500/20 text-purple-300">
-						{songs.count} Songs
-					</Badge>
-					{songs.emilyLiveSongs > 0 && (
-						<Badge color="pink" variant="light" size="sm" className="bg-pink-500/20 text-pink-300">
-							{songs.emilyLiveSongs} Emily Live
+					<Group gap="xs">
+						<Badge
+							size="sm"
+							variant="filled"
+							style={{
+								background: theme.primary.DEFAULT,
+								color: theme.text.contrast,
+							}}
+						>
+							{songs.count} Songs
 						</Badge>
-					)}
-					{songs.lpLiveSongs > 0 && (
-						<Badge color="blue" variant="light" size="sm" className="bg-blue-500/20 text-blue-300">
-							{songs.lpLiveSongs} LP Live
-						</Badge>
-					)}
-				</Group>
-			</Box>
-		</Card>
+						{songs.emilyLiveSongs > 0 && (
+							<Badge
+								size="sm"
+								variant="filled"
+								style={{
+									background: theme.badges.liveEmily,
+									color: theme.text.contrast,
+								}}
+							>
+								{songs.emilyLiveSongs} Emily Live
+							</Badge>
+						)}
+						{songs.lpLiveSongs > 0 && (
+							<Badge
+								size="sm"
+								variant="filled"
+								style={{
+									background: theme.badges.liveLP,
+									color: theme.text.contrast,
+								}}
+							>
+								{songs.lpLiveSongs} LP Live
+							</Badge>
+						)}
+					</Group>
+				</Box>
+			</Card>
+		</div>
 	);
 }

@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
-import { Box, Container, Title, Text, Group, Badge, Card, Image, Stack, Grid, GridCol } from "@mantine/core";
+import { Box, Container, Title, Text, Image, Stack, Grid, GridCol } from "@mantine/core";
 import { albums } from "../../../lib/list";
 import BackButton from "../../../Components/BackButton";
 import { getThemeColors } from "@/lib/themes";
+import TrackCard from "@/Components/TrackCard";
 
 export function generateStaticParams() {
 	return albums.map((album) => ({
@@ -34,95 +35,96 @@ export default async function AlbumDetail({ params }: { params: Promise<{ albumI
 		notFound();
 	}
 
-	// Theme colors based on album
-
 	const theme = getThemeColors(albumId);
 
 	return (
-		<Box className="min-h-screen">
+		<Box
+			className="min-h-screen"
+			style={{
+				background: theme.background.gradient,
+				viewTransitionName: `album-card-background-${album.id}`,
+			}}
+		>
 			<Container size="xl" className="py-12">
 				{/* Back Button */}
-				<BackButton />
+				<BackButton theme={theme} />
 
-				<Grid columns={5} gutter={"xl"}>
+				<Grid columns={5} gutter={"xl"} className="mb-12">
 					<GridCol span={"content"}>
-						<Image
-							src={album.image}
-							alt={album.label}
-							h={200}
-							w={200}
-							className="aspect-square!"
-							style={{ viewTransitionName: `album-card-image-${album.id}` }}
-						/>
+						<Box
+							style={{
+								border: `3px solid ${theme.border.light}`,
+								borderRadius: "8px",
+								padding: "4px",
+								background: theme.background.secondary,
+								boxShadow: `0 8px 32px ${theme.primary.DEFAULT}40`,
+								viewTransitionName: `album-card-image-${album.id}`,
+							}}
+						>
+							<Image
+								src={album.image}
+								alt={album.label}
+								h={200}
+								w={200}
+								className="aspect-square!"
+								style={{
+									borderRadius: "4px",
+								}}
+							/>
+						</Box>
 					</GridCol>
 
 					<GridCol span={"auto"}>
 						<Title
 							order={1}
-							className="text-6xl font-bold text-white"
-							style={{ viewTransitionName: `album-card-title-${album.id}` }}
+							className="mb-3 text-6xl font-bold"
+							style={{
+								viewTransitionName: `album-card-title-${album.id}`,
+								color: theme.text.primary,
+								textShadow: `0 0 20px ${theme.primary.DEFAULT}80`,
+							}}
 						>
 							{album.label}
 						</Title>
-						<Text size="xl" className="text-gray-400" style={{ viewTransitionName: `album-card-release-date-${album.id}` }}>
-							Released:{" "}
+						<Text
+							size="xl"
+							className="mb-4"
+							style={{
+								viewTransitionName: `album-card-release-date-${album.id}`,
+								color: theme.text.secondary,
+							}}
+						>
+							<span style={{ color: theme.accent.DEFAULT, fontWeight: 600 }}>Released: </span>
 							{new Date(album.releaseDate).toLocaleDateString("en-US", {
 								year: "numeric",
 								month: "long",
 								day: "numeric",
 							})}
 						</Text>
-						<Text className="text-gray-400">{album.description}</Text>
+						<Text size="md" style={{ color: theme.text.muted, lineHeight: 1.6 }}>
+							{album.description}
+						</Text>
 					</GridCol>
 				</Grid>
 
 				{/* Track List */}
 				{album.tracks.length > 0 && (
 					<Box>
-						<Title order={2} className="mb-6 text-3xl font-bold text-white">
+						<Title
+							order={2}
+							className="mb-6 text-3xl font-bold"
+							style={{
+								color: theme.text.primary,
+								borderBottom: `2px solid ${theme.border.light}`,
+								paddingBottom: "12px",
+							}}
+						>
 							Track List
 						</Title>
 
-						<Stack gap="sm">
+						<Stack gap="xs" pt={"md"} pb={50}>
 							{album.tracks.map((track, index) => (
-								<Card
-									key={track.id}
-									className="border border-gray-700 bg-gray-800/30 backdrop-blur-sm transition-all duration-200 hover:bg-gray-800/50"
-								>
-									<Group justify="space-between" align="center">
-										<Group gap="md">
-											<Text size="lg" fw={600} style={{ color: theme.primary }} className="min-w-8">
-												{index + 1}
-											</Text>
-											<Text size="lg" className="text-white">
-												{track.label}
-											</Text>
-										</Group>
-
-										<Group gap="md">
-											<Text size="sm" className="text-gray-400">
-												{track.duration}
-											</Text>
-											<Group gap="xs">
-												{track.studioUrl && (
-													<Badge size="sm" color="green" variant="light">
-														Studio
-													</Badge>
-												)}
-												{track.emilyLiveUrl && (
-													<Badge size="sm" color="pink" variant="light">
-														Emily Live
-													</Badge>
-												)}
-												{track.lpLiveUrl && (
-													<Badge size="sm" color="blue" variant="light">
-														LP Live
-													</Badge>
-												)}
-											</Group>
-										</Group>
-									</Group>
-								</Card>
+								<TrackCard key={track.id} track={track} index={index} theme={theme} />
 							))}
 						</Stack>
 					</Box>
