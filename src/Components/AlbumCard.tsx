@@ -72,26 +72,26 @@ export default function AlbumCard({ album }: { album: Album }) {
 						fw={700}
 						className="transition-colors"
 						style={{
-							viewTransitionName: `album-card-title-${album.id}`,
 							color: theme.text.primary,
 						}}
 					>
-						{label}
+						<span style={{ viewTransitionName: `album-card-title-${album.id}` }}>{label}</span>
 					</Text>
 
 					<Text
 						size="sm"
 						style={{
-							viewTransitionName: `album-card-release-date-${album.id}`,
 							color: theme.text.secondary,
 						}}
 					>
-						<span style={{ color: theme.accent.DEFAULT, fontWeight: 600 }}>Released: </span>
-						{new Date(releaseDate).toLocaleDateString("en-US", {
-							year: "numeric",
-							month: "long",
-							day: "numeric",
-						})}
+						<span style={{ viewTransitionName: `album-card-release-date-${album.id}` }}>
+							<span style={{ color: theme.accent.DEFAULT, fontWeight: 600 }}>Released: </span>
+							{new Date(releaseDate).toLocaleDateString("en-US", {
+								year: "numeric",
+								month: "long",
+								day: "numeric",
+							})}
+						</span>
 					</Text>
 
 					<Group gap="xs">

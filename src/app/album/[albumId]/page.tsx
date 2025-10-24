@@ -79,27 +79,27 @@ export default async function AlbumDetail({ params }: { params: Promise<{ albumI
 							order={1}
 							className="mb-3 text-6xl font-bold"
 							style={{
-								viewTransitionName: `album-card-title-${album.id}`,
 								color: theme.text.primary,
 								textShadow: `0 0 20px ${theme.primary.DEFAULT}80`,
 							}}
 						>
-							{album.label}
+							<span style={{ viewTransitionName: `album-card-title-${album.id}` }}>{album.label}</span>
 						</Title>
 						<Text
 							size="xl"
 							className="mb-4"
 							style={{
-								viewTransitionName: `album-card-release-date-${album.id}`,
 								color: theme.text.secondary,
 							}}
 						>
-							<span style={{ color: theme.accent.DEFAULT, fontWeight: 600 }}>Released: </span>
-							{new Date(album.releaseDate).toLocaleDateString("en-US", {
-								year: "numeric",
-								month: "long",
-								day: "numeric",
-							})}
+							<span style={{ viewTransitionName: `album-card-release-date-${album.id}` }}>
+								<span style={{ color: theme.accent.DEFAULT, fontWeight: 600 }}>Released: </span>
+								{new Date(album.releaseDate).toLocaleDateString("en-US", {
+									year: "numeric",
+									month: "long",
+									day: "numeric",
+								})}
+							</span>
 						</Text>
 						<Text size="md" style={{ color: theme.text.muted, lineHeight: 1.6 }}>
 							{album.description}
