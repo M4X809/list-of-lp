@@ -78,7 +78,7 @@ export default function TrackCard({ track, index, theme }: TrackCardProps) {
 								Studio
 							</Badge>
 						)}
-						{track.emilyLiveUrl && (
+						{track.emilyLive && (
 							<Badge
 								size="sm"
 								variant="filled"
@@ -90,7 +90,7 @@ export default function TrackCard({ track, index, theme }: TrackCardProps) {
 								Emily Live
 							</Badge>
 						)}
-						{track.lpLiveUrl && (
+						{track.lpLive && (
 							<Badge
 								size="sm"
 								variant="filled"

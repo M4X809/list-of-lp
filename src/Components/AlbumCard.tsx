@@ -18,8 +18,8 @@ export default function AlbumCard({ album }: { album: Album }) {
 
 	const songs: Songs = {
 		count: tracks.length,
-		emilyLiveSongs: tracks.filter((track) => track.emilyLiveUrl !== null).length,
-		lpLiveSongs: tracks.filter((track) => track.lpLiveUrl !== null).length,
+		emilyLiveSongs: tracks.filter((track) => track.emilyLive !== null).length,
+		lpLiveSongs: tracks.filter((track) => track.lpLive !== null).length,
 	};
 
 	const theme = getThemeColors(album.id);

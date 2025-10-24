@@ -3,8 +3,16 @@ export type Track = {
 	label: string;
 	duration: string;
 	studioUrl: string | null;
-	emilyLiveUrl: string | null;
-	lpLiveUrl: string | null;
+	emilyLive: null | {
+		url: string;
+		date: string;
+		location: string;
+	};
+	lpLive: null | {
+		url: string;
+		date: string;
+		location: string;
+	};
 
 	// this is the spotify url for the album
 	__SPOTIFY_URL__: string;
