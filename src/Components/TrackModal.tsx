@@ -36,19 +36,23 @@ export default function TrackModal({ opened, onClose, track, theme }: TrackModal
 					boxShadow: "none",
 				},
 			}}
+			size="lg"
+			padding="md"
 		>
-			<Stack>
-				<Title order={1}>{track.label}</Title>
+			<Stack gap="md">
+				<Title order={1} className="text-2xl sm:text-3xl md:text-4xl">
+					{track.label}
+				</Title>
 				<Divider
 					color={theme.accent.DEFAULT}
 					size={"lg"}
 					label={
-						<Title c={theme.accent.DEFAULT} order={3}>
+						<Title c={theme.accent.DEFAULT} order={3} className="text-lg sm:text-xl">
 							Studio Version
 						</Title>
 					}
 				/>
-				<Grid columns={songLink && Object.keys(songLink).length > 0 ? Object.keys(songLink).length : 4}>
+				<Grid gutter="sm">
 					{songLink &&
 						Object.entries(songLink).map(([key, value]) => {
 							let themeColor: {
@@ -93,7 +97,7 @@ export default function TrackModal({ opened, onClose, track, theme }: TrackModal
 
 							return (
 								<GridCol
-									span={1}
+									span={{ base: 6, xs: 4, sm: 3 }}
 									key={`${track.id}_${key}`}
 									style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
 								>
@@ -121,19 +125,23 @@ export default function TrackModal({ opened, onClose, track, theme }: TrackModal
 							color={theme.accent.DEFAULT}
 							size={"lg"}
 							label={
-								<Title c={theme.accent.DEFAULT} order={3}>
+								<Title c={theme.accent.DEFAULT} order={3} className="text-lg sm:text-xl">
 									Fan Live Versions
 								</Title>
 							}
 						/>
-						<Stack>
+						<Stack gap="sm">
 							{track.emilyLive.map((live) => (
 								<Box style={{ width: "100%" }} key={`emilyLive_${live.url}`}>
-									<Group justify="space-between" align="center">
-										<Box style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-											<Text>By: {live.author}</Text>
-											<Text>{live.location}</Text>
-											<Text>
+									<Group justify="space-between" align="center" wrap="nowrap" gap="xs">
+										<Box style={{ display: "flex", flexDirection: "column", gap: "4px" }} className="min-w-0 flex-1">
+											<Text size="sm" className="truncate sm:text-base">
+												By: {live.author}
+											</Text>
+											<Text size="sm" className="truncate sm:text-base">
+												{live.location}
+											</Text>
+											<Text size="xs" className="sm:text-sm">
 												{new Date(live.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
 											</Text>
 										</Box>
@@ -146,6 +154,7 @@ export default function TrackModal({ opened, onClose, track, theme }: TrackModal
 											href={live.url}
 											target="_blank"
 											rel="noopener noreferrer"
+											className="shrink-0"
 										>
 											<FontAwesomeIcon icon={faYoutube} />
 										</ActionIcon>
@@ -162,22 +171,24 @@ export default function TrackModal({ opened, onClose, track, theme }: TrackModal
 							color={theme.accent.DEFAULT}
 							size={"lg"}
 							label={
-								<Title c={theme.accent.DEFAULT} order={3}>
+								<Title c={theme.accent.DEFAULT} order={3} className="text-lg sm:text-xl">
 									Linkin Park Live Versions
 								</Title>
 							}
 						/>
-						<Group justify="space-between" align="center">
-							<Box style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-								<Text>
+						<Group justify="space-between" align="center" wrap="nowrap" gap="xs">
+							<Box style={{ display: "flex", flexDirection: "column", gap: "4px" }} className="min-w-0 flex-1">
+								<Text size="sm" className="sm:text-base">
 									{new Date(track.lpLive.date).toLocaleDateString("en-US", {
 										year: "numeric",
 										month: "long",
 										day: "numeric",
 									})}
 								</Text>
-								<Text>{track.lpLive.location}</Text>
-								<Text size="sm" c={theme.accent.DEFAULT}>
+								<Text size="sm" className="truncate sm:text-base">
+									{track.lpLive.location}
+								</Text>
+								<Text size="xs" c={theme.accent.DEFAULT} className="sm:text-sm">
 									{track.lpLive.disclaimer}
 								</Text>
 							</Box>
@@ -190,6 +201,7 @@ export default function TrackModal({ opened, onClose, track, theme }: TrackModal
 								href={track.lpLive.url}
 								target="_blank"
 								rel="noopener noreferrer"
+								className="shrink-0"
 							>
 								<FontAwesomeIcon icon={faYoutube} />
 							</ActionIcon>
@@ -203,14 +215,14 @@ export default function TrackModal({ opened, onClose, track, theme }: TrackModal
 							color={theme.accent.DEFAULT}
 							size={"lg"}
 							label={
-								<Title c={theme.accent.DEFAULT} order={3}>
+								<Title c={theme.accent.DEFAULT} order={3} className="text-lg sm:text-xl">
 									LP TV
 								</Title>
 							}
 						/>
-						<Group justify="space-between" align="center">
-							<Box style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-								<Text>
+						<Group justify="space-between" align="center" wrap="nowrap" gap="xs">
+							<Box style={{ display: "flex", flexDirection: "column", gap: "4px" }} className="min-w-0 flex-1">
+								<Text size="sm" className="sm:text-base">
 									{new Date(track.lpTV.date).toLocaleDateString("en-US", {
 										year: "numeric",
 										month: "long",
@@ -227,6 +239,7 @@ export default function TrackModal({ opened, onClose, track, theme }: TrackModal
 								href={track.lpTV.url}
 								target="_blank"
 								rel="noopener noreferrer"
+								className="shrink-0"
 							>
 								<FontAwesomeIcon icon={faYoutube} />
 							</ActionIcon>

@@ -27,33 +27,38 @@ export default function TrackCard({ track, index, theme }: TrackCardProps) {
 					theme.card.border,
 				)}
 				style={{}}
+				p="sm"
 			>
-				<Group justify="space-between" align="center">
-					<Group gap="md">
+				<div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+					{/* Track Number and Title */}
+					<Group gap="xs" wrap="nowrap" className="min-w-0 flex-1">
 						<Box
 							style={{
-								minWidth: "40px",
-								height: "40px",
+								minWidth: "32px",
+								width: "32px",
+								height: "32px",
 								display: "flex",
 								alignItems: "center",
 								justifyContent: "center",
 								background: theme.primary.DEFAULT,
 								borderRadius: "8px",
 								fontWeight: 700,
-								fontSize: "18px",
+								fontSize: "16px",
 								color: theme.text.contrast,
 								boxShadow: `0 4px 12px ${theme.primary.DEFAULT}60`,
 							}}
+							className="sm:h-[40px] sm:w-[40px] sm:min-w-[40px] sm:text-lg"
 						>
 							{index + 1}
 						</Box>
-						<Text size="lg" fw={500} style={{ color: theme.text.primary }}>
+						<Text size="md" fw={500} style={{ color: theme.text.primary }} className="truncate sm:text-lg">
 							{track.label}
 						</Text>
 					</Group>
 
-					<Group gap="md">
-						<Group gap="xs">
+					{/* Badges and Duration */}
+					<div className="flex flex-wrap items-center justify-between gap-2 sm:justify-end">
+						<Group gap="xs" wrap="wrap">
 							{track.__SPOTIFY_URL__ && (
 								<Badge
 									size="sm"
@@ -106,20 +111,21 @@ export default function TrackCard({ track, index, theme }: TrackCardProps) {
 							)}
 						</Group>
 						<Text
-							size="sm"
+							size="xs"
 							fw={500}
 							style={{
 								color: theme.text.muted,
 								fontFamily: "monospace",
 								background: theme.background.tertiary,
-								padding: "4px 12px",
+								padding: "4px 8px",
 								borderRadius: "6px",
 							}}
+							className="sm:px-3 sm:text-sm"
 						>
 							{track.duration}
 						</Text>
-					</Group>
-				</Group>
+					</div>
+				</div>
 			</Card>
 			<TrackModal opened={modalOpened} onClose={() => setModalOpened(false)} track={track} theme={theme} />
 		</>

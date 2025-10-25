@@ -46,12 +46,12 @@ export default async function AlbumDetail({ params }: { params: Promise<{ albumI
 				viewTransitionName: `album-card-background-${album.id}`,
 			}}
 		>
-			<Container size="xl" className="py-12">
+			<Container size="xl" className="px-4 py-6 sm:py-12">
 				{/* Back Button */}
 				<BackButton theme={theme} />
 
-				<Grid columns={5} gutter={"xl"} className="mb-12">
-					<GridCol span={"content"}>
+				<Grid gutter={{ base: "md", sm: "xl" }} className="mb-8 sm:mb-12">
+					<GridCol span={{ base: 12, sm: "content" }}>
 						<Box
 							style={{
 								border: `3px solid ${theme.border.light}`,
@@ -60,6 +60,7 @@ export default async function AlbumDetail({ params }: { params: Promise<{ albumI
 								boxShadow: `0 8px 32px ${theme.primary.DEFAULT}40`,
 								viewTransitionName: `album-card-image-${album.id}`,
 							}}
+							className="mx-auto max-w-[200px] sm:mx-0"
 						>
 							<Image
 								src={album.image}
@@ -71,10 +72,10 @@ export default async function AlbumDetail({ params }: { params: Promise<{ albumI
 						</Box>
 					</GridCol>
 
-					<GridCol span={"auto"}>
+					<GridCol span={{ base: 12, sm: "auto" }}>
 						<Title
 							order={1}
-							className="mb-3 text-6xl font-bold"
+							className="mb-3 text-center text-3xl font-bold sm:text-left sm:text-4xl md:text-5xl lg:text-6xl"
 							style={{
 								color: theme.text.primary,
 								textShadow: `0 0 20px ${theme.primary.DEFAULT}80`,
@@ -83,8 +84,8 @@ export default async function AlbumDetail({ params }: { params: Promise<{ albumI
 							<span style={{ viewTransitionName: `album-card-title-${album.id}` }}>{album.label}</span>
 						</Title>
 						<Text
-							size="xl"
-							className="mb-4"
+							size="lg"
+							className="mb-4 text-center sm:text-left"
 							style={{
 								color: theme.text.secondary,
 							}}
@@ -98,7 +99,7 @@ export default async function AlbumDetail({ params }: { params: Promise<{ albumI
 								})}
 							</span>
 						</Text>
-						<Text size="md" style={{ color: theme.text.muted, lineHeight: 1.6 }}>
+						<Text size="md" style={{ color: theme.text.muted, lineHeight: 1.6 }} className="text-center sm:text-left">
 							{album.description}
 						</Text>
 					</GridCol>
@@ -109,17 +110,17 @@ export default async function AlbumDetail({ params }: { params: Promise<{ albumI
 					<Box>
 						<Title
 							order={2}
-							className="mb-6 text-3xl font-bold"
+							className="mb-4 text-2xl font-bold sm:mb-6 sm:text-3xl"
 							style={{
 								color: theme.text.primary,
 								borderBottom: `2px solid ${theme.border.light}`,
-								paddingBottom: "12px",
+								paddingBottom: "8px",
 							}}
 						>
 							Track List
 						</Title>
 
-						<Stack gap="xs" pt={"md"} pb={50}>
+						<Stack gap="xs" pt={{ base: "sm", sm: "md" }} pb={{ base: 25, sm: 50 }}>
 							{album.tracks.map((track, index) => (
 								<TrackCard key={track.id} track={track} index={index} theme={theme} />
 							))}
