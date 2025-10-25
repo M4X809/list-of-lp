@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
 	console.log("🚀 ~ route.tsx:29 ~ GET ~ imagePath:", imagePath);
 	// Build absolute URL for the redirect
 	const { nextUrl } = request;
-	const absoluteUrl = `${nextUrl.protocol}//${nextUrl.host}${imagePath}`;
+	const absoluteUrl = urlENV ? `${urlENV}${imagePath}` : `${nextUrl.protocol}//${nextUrl.host}${imagePath}`;
 	console.log("🚀 ~ route.tsx:33 ~ GET ~ absoluteUrl:", absoluteUrl);
 
 	return NextResponse.redirect(absoluteUrl, 307);
