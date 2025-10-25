@@ -1,72 +1,53 @@
 "use client";
-import { albums } from "@/lib/list";
 import { getSongLink } from "@/lib/songLinks";
-import { getThemeColors } from "@/lib/themes";
-import { faApple, faSpotify, faYoutube, faYoutubeSquare, IconDefinition } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { AlbumTheme } from "@/lib/themes";
+import type { Track } from "@/lib/ListTypes";
 import {
-	ActionIcon,
-	Anchor,
-	Box,
-	Divider,
-	Grid,
-	GridCol,
-	Group,
-	Modal,
-	Stack,
-	Text,
-	Title,
-	Tooltip,
-} from "@mantine/core";
-import { useDisclosure, useHash } from "@mantine/hooks";
+	faApple,
+	faSpotify,
+	faYoutube,
+	faYoutubeSquare,
+	type IconDefinition,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ActionIcon, Box, Divider, Grid, GridCol, Group, Modal, Stack, Text, Title, Tooltip } from "@mantine/core";
 import Link from "next/link";
 
-export default function TrackModal() {
-	const [hash, setHash] = useHash();
-	console.log("🚀 ~ TrackModal.tsx:8 ~ TrackModal ~ hash:", hash);
-	const close = () => {
-		setHash("");
-	};
+interface TrackModalProps {
+	opened: boolean;
+	onClose: () => void;
+	track: Track;
+	theme: AlbumTheme;
+}
 
-	const album = albums.find((album) => {
-		return album.id === hash.split("_")[1];
-	});
-	const track = album?.tracks.find((track) => {
-		return track.id === `${hash.split("_")[1]}_${hash.split("_")[2]}`;
-	});
-
-	const songLink = getSongLink(track?.id || "");
-	console.log("🚀 ~ TrackModal.tsx:25 ~ TrackModal ~ songLink:", songLink);
-
-	const theme = getThemeColors(album?.id || "");
+export default function TrackModal({ opened, onClose, track, theme }: TrackModalProps) {
+	const songLink = getSongLink(track.id);
 
 	return (
 		<Modal
-			opened={hash.startsWith("#trackModal_")}
-			onClose={close}
+			centered
+			opened={opened}
+			onClose={onClose}
 			withCloseButton={false}
+			transitionProps={{ duration: 150, transition: "fade" }}
 			styles={{
-				// content: {
-				// 	background: theme.background.gradient,
-				// 	border: `2px solid ${theme.border.light}`,
-				// 	boxShadow: "none",
-				// },
-				// header: {
-				// 	background: theme.background.gradient,
-				// 	border: `2px solid ${theme.border.light}`,
-				// 	boxShadow: "none",
-				// },
 				body: {
 					background: theme.background.gradient,
-					// border: `2px solid ${theme.border.light}`,
-
 					boxShadow: "none",
 				},
 			}}
 		>
 			<Stack>
-				<Title order={1}>{track?.label}</Title>
-				<Divider size={"lg"} label={<Title order={3}>Studio Version</Title>} />
+				<Title order={1}>{track.label}</Title>
+				<Divider
+					color={theme.accent.DEFAULT}
+					size={"lg"}
+					label={
+						<Title c={theme.accent.DEFAULT} order={3}>
+							Studio Version
+						</Title>
+					}
+				/>
 				<Grid columns={songLink && Object.keys(songLink).length > 0 ? Object.keys(songLink).length : 4}>
 					{songLink &&
 						Object.entries(songLink).map(([key, value]) => {
@@ -113,11 +94,12 @@ export default function TrackModal() {
 							return (
 								<GridCol
 									span={1}
-									key={`${track?.id}_${key}`}
+									key={`${track.id}_${key}`}
 									style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
 								>
 									<Tooltip label={themeColor.tooltip}>
 										<ActionIcon
+											tabIndex={-1}
 											variant="filled"
 											color={themeColor.color}
 											size="lg"
@@ -133,11 +115,19 @@ export default function TrackModal() {
 							);
 						})}
 				</Grid>
-				{Array.isArray(track?.emilyLive) && (
+				{Array.isArray(track.emilyLive) && (
 					<>
-						<Divider size={"lg"} label={<Title order={3}>Fan Live Versions</Title>} />
+						<Divider
+							color={theme.accent.DEFAULT}
+							size={"lg"}
+							label={
+								<Title c={theme.accent.DEFAULT} order={3}>
+									Fan Live Versions
+								</Title>
+							}
+						/>
 						<Stack>
-							{track.emilyLive.map((live, idx) => (
+							{track.emilyLive.map((live) => (
 								<Box style={{ width: "100%" }} key={`emilyLive_${live.url}`}>
 									<Group justify="space-between" align="center">
 										<Box style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
@@ -148,6 +138,7 @@ export default function TrackModal() {
 											</Text>
 										</Box>
 										<ActionIcon
+											tabIndex={-1}
 											variant="filled"
 											color={"#FF0000"}
 											size="lg"
@@ -165,26 +156,35 @@ export default function TrackModal() {
 					</>
 				)}
 
-				{track?.lpLive && (
+				{track.lpLive && (
 					<>
-						<Divider size={"lg"} label={<Title order={3}>Linkin Park Live Versions</Title>} />
+						<Divider
+							color={theme.accent.DEFAULT}
+							size={"lg"}
+							label={
+								<Title c={theme.accent.DEFAULT} order={3}>
+									Linkin Park Live Versions
+								</Title>
+							}
+						/>
 						<Group justify="space-between" align="center">
 							<Box style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
 								<Text>
-									{new Date(track?.lpLive.date).toLocaleDateString("en-US", {
+									{new Date(track.lpLive.date).toLocaleDateString("en-US", {
 										year: "numeric",
 										month: "long",
 										day: "numeric",
 									})}
 								</Text>
-								<Text>{track?.lpLive.location}</Text>
+								<Text>{track.lpLive.location}</Text>
 							</Box>
 							<ActionIcon
+								tabIndex={-1}
 								variant="filled"
 								color={"#FF0000"}
 								size="lg"
 								component={Link}
-								href={track?.lpLive.url}
+								href={track.lpLive.url}
 								target="_blank"
 								rel="noopener noreferrer"
 							>

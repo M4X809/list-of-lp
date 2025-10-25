@@ -22,12 +22,6 @@ export const albums: Album[] = [
 						location: "Austin, Texas, USA",
 						author: "Erynn Halvorson",
 					},
-					{
-						url: "https://youtu.be/miQ9Y5UW08dasdasdg",
-						date: "2025-04-26",
-						location: "Austin, Texas, USdasdsaA",
-						author: "Erynn Halvorson",
-					},
 				],
 				lpLive: {
 					url: "https://www.youtube.com/watch?v=DOKcCl6iKaA",

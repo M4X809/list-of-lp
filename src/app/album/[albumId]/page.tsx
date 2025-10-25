@@ -4,7 +4,6 @@ import { albums } from "../../../lib/list";
 import BackButton from "../../../Components/BackButton";
 import { getThemeColors } from "@/lib/themes";
 import TrackCard from "@/Components/TrackCard";
-import TrackModal from "@/Components/TrackModal";
 
 export function generateStaticParams() {
 	return albums.map((album) => ({
@@ -46,7 +45,6 @@ export default async function AlbumDetail({ params }: { params: Promise<{ albumI
 				viewTransitionName: `album-card-background-${album.id}`,
 			}}
 		>
-			<TrackModal />
 			<Container size="xl" className="py-12">
 				{/* Back Button */}
 				<BackButton theme={theme} />
@@ -57,7 +55,6 @@ export default async function AlbumDetail({ params }: { params: Promise<{ albumI
 							style={{
 								border: `3px solid ${theme.border.light}`,
 								borderRadius: "8px",
-								padding: "4px",
 								background: theme.background.secondary,
 								boxShadow: `0 8px 32px ${theme.primary.DEFAULT}40`,
 								viewTransitionName: `album-card-image-${album.id}`,
