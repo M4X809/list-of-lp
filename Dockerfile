@@ -15,8 +15,7 @@ WORKDIR /app
 # Copy dependencies and config files
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/package.json ./
-COPY --from=deps /app/bunfig.toml ./
-COPY --from=deps /app/next.config.js ./
+COPY --from=deps /app/next.config.ts ./
 
 # Copy source code
 COPY . .
@@ -44,9 +43,7 @@ COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
-COPY --from=builder /app/src/env.js ./src/env.js
-COPY --from=builder /app/next.config.js ./
-COPY --from=builder /app/bunScripts ./bunScripts
+COPY --from=builder /app/next.config.ts ./
 
 ENV TZ="CET"
 ENV LANG="de_DE.UTF-8"
