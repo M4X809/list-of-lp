@@ -9,8 +9,8 @@ WORKDIR /app
 COPY package.json ./
 COPY bun.lock* ./
 
-# Install dependencies
-RUN bun install
+# Install dependencies including devDependencies
+RUN bun install --production=false
 
 # Build the application
 FROM base AS builder
