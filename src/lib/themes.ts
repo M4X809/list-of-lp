@@ -200,6 +200,54 @@ const themes: Record<string, AlbumTheme> = {
 			border: "border-[#474443]",
 		},
 	},
+	"a-thousand-suns": {
+		primary: {
+			DEFAULT: "#909293",
+			light: "#C2C4C5",
+			dark: "#2A2A2C",
+			100: "#fefefe",
+			500: "#909293",
+			900: "#1d1d1d",
+		},
+		secondary: {
+			DEFAULT: "#C2C4C5",
+			light: "#e7e8e8",
+			dark: "#9a9ea0",
+		},
+		accent: {
+			DEFAULT: "#a6a8a8",
+			light: "#d3d3d4",
+			dark: "#737575",
+		},
+		background: {
+			primary: "#232325",
+			secondary: "#2A2A2C",
+			tertiary: "#565858",
+			gradient: "linear-gradient(135deg, #232325 0%, #2A2A2C 50%, #565858 100%)",
+		},
+		text: {
+			primary: "#FCFCFC",
+			secondary: "#e9e9e9",
+			muted: "#bdbdbe",
+			contrast: "#FCFCFC",
+		},
+		border: {
+			DEFAULT: "#565858",
+			light: "#909293",
+			focus: "#C2C4C5",
+		},
+		badges: {
+			studio: "#909293",
+			liveEmily: "#a6a8a8",
+			liveLP: "#C2C4C5",
+			lpTV: "#bdbdbe",
+		},
+		card: {
+			background: "bg-[#565858]/60",
+			backgroundHover: "hover:bg-[#909293]/30",
+			border: "border-[#565858]",
+		},
+	},
 };
 
 export const getThemeColors = (albumId: string): AlbumTheme => {

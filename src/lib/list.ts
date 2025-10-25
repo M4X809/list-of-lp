@@ -2,6 +2,153 @@ import type { Album } from "./ListTypes";
 
 export const albums: Album[] = [
 	{
+		id: "a-thousand-suns",
+		label: "A Thousand Suns",
+		releaseDate: "2010-09-14",
+		image: "/a_thousand_suns.jpg",
+		url: "/a-thousand-suns",
+		description:
+			"A Thousand Suns is the fourth studio album by American rock band Linkin Park, released on September 14, 2010, by Warner Bros. Records. The album represents a dramatic departure from the band's previous work, featuring a more experimental and concept-driven approach with themes of human fears and warfare.",
+		tracks: [
+			{
+				id: "a-thousand-suns_1",
+				label: "The Requiem",
+				duration: "02:02",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/0zraM3kiqKEEiTNyBVnlHt?si=43fa670c22534803",
+			},
+			{
+				id: "a-thousand-suns_2",
+				label: "The Radiance",
+				duration: "00:58",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/2cJUZUddCR3gZdBoo4buym?si=ecca4439a59f4d16",
+			},
+			{
+				id: "a-thousand-suns_3",
+				label: "Burning In The Skies",
+				duration: "04:14",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/5dhnFKVNR2x9BYqQ6FPpQh?si=1d3b4e028d1549c0",
+			},
+			{
+				id: "a-thousand-suns_4",
+				label: "Empty Spaces",
+				duration: "00:19",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/1dxoNIDuvj8c7sWdHt39W4?si=88ecd0b481ef40ac",
+			},
+			{
+				id: "a-thousand-suns_5",
+				label: "When They Come for Me",
+				duration: "04:54",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/1uaIJkuGvwSu7qWHOwCYbV?si=0cb6c50c64234b84",
+			},
+			{
+				id: "a-thousand-suns_6",
+				label: "Robot Boy",
+				duration: "04:29",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/0YSsNYXDK9ZQaSNEpx9VW4?si=7e200f67aa364a5b",
+			},
+			{
+				id: "a-thousand-suns_7",
+				label: "Jornada Del Muerto",
+				duration: "01:35",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/7vIDRSAh5QN20sd7VpzsRq?si=4d9c8767a2cb4bc0",
+			},
+			{
+				id: "a-thousand-suns_8",
+				label: "Waiting for the End",
+				duration: "03:52",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/5JHNg1hxZFT7TDEphhM4wj?si=7ab221f4844c4f04",
+			},
+			{
+				id: "a-thousand-suns_9",
+				label: "Blackout",
+				duration: "04:40",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/7N2zw7Yp5XLbDV1twQrFe7?si=3f8c8872d6944463",
+			},
+			{
+				id: "a-thousand-suns_10",
+				label: "Wretches and Kings",
+				duration: "04:11",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/5U4RjLvUsjYaKu1dKWzSsP?si=0aa9a8a0503444be",
+			},
+			{
+				id: "a-thousand-suns_11",
+				label: "Wisdom, Justice, and Love",
+				duration: "01:39",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/49vJBI1FecKnhZq5Ga62j5?si=2b92f105792b499b",
+			},
+			{
+				id: "a-thousand-suns_12",
+				label: "Iridescent",
+				duration: "04:57",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/69ZEgPX0hxWXJIqkTlYz41?si=03927e2613194646",
+			},
+			{
+				id: "a-thousand-suns_13",
+				label: "Fallout",
+				duration: "01:24",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/5Phqm7iMAdEQ3wxhqas3Nj?si=0eb7eb34a91b4fe4",
+			},
+
+			{
+				id: "a-thousand-suns_14",
+				label: "The Catalyst",
+				duration: "05:40",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/5bvgRxco3jgSZ3SP8rueDA?si=dcc47c09e2d94fa9",
+			},
+			{
+				id: "a-thousand-suns_15",
+				label: "The Messenger",
+				duration: "03:02",
+				emilyLive: null,
+				lpLive: null,
+
+				__SPOTIFY_URL__: "https://open.spotify.com/track/0pQZMrYNcfwZbt2Zt0pjaA?si=7971d92962ab4842",
+			},
+		],
+	},
+	{
 		id: "minutes-to-midnight",
 		label: "Minutes to Midnight",
 		releaseDate: "2007-05-14",
