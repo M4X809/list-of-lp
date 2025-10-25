@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
-import { Box, Container, Title, Text, Image, Stack, Grid, GridCol } from "@mantine/core";
+import { Box, Container, Title, Text, Stack, Grid, GridCol } from "@mantine/core";
 import { albums } from "../../../lib/list";
 import BackButton from "../../../Components/BackButton";
 import { getThemeColors } from "@/lib/themes";
 import TrackCard from "@/Components/TrackCard";
-
+import Image from "next/image";
 export function generateStaticParams() {
 	return albums.map((album) => ({
 		albumId: album.id,
@@ -64,12 +64,9 @@ export default async function AlbumDetail({ params }: { params: Promise<{ albumI
 							<Image
 								src={album.image}
 								alt={album.label}
-								h={200}
-								w={200}
-								className="aspect-square!"
-								style={{
-									borderRadius: "4px",
-								}}
+								width={200}
+								height={200}
+								className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-110"
 							/>
 						</Box>
 					</GridCol>

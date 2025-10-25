@@ -20,7 +20,7 @@ export default function HomePage() {
 						</Text>
 					</Box>
 
-					<SimpleGrid cols={3} className="gap-8">
+					<SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} className="gap-8">
 						{albums.map((album) => (
 							<AlbumCard key={album.id} album={album} />
 						))}
@@ -29,7 +29,7 @@ export default function HomePage() {
 			</Box>
 			<Box className="bg-gray-900 pb-12">
 				<Center>
-					<Text size="sm" className="text-gray-400">
+					<Text size="sm" className="px-4 text-gray-400 sm:px-0">
 						Disclaimer: This website is not affiliated with Linkin Park or any of its members. <br />
 						All rights reserved to the respective owners. This website is a fan-made project and is not intended to be used
 						for commercial purposes.

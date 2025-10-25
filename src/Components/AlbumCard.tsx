@@ -2,9 +2,10 @@
 
 import { getThemeColors } from "@/lib/themes";
 import type { Album } from "../lib/ListTypes";
-import { Box, Card, Image, Text, Badge, Group } from "@mantine/core";
+import { Box, Card, Text, Badge, Group } from "@mantine/core";
 import { Link } from "next-view-transitions";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function AlbumCard({ album }: { album: Album }) {
 	const { label, releaseDate, image, tracks } = album;
@@ -62,7 +63,8 @@ export default function AlbumCard({ album }: { album: Album }) {
 						<Image
 							src={image}
 							alt={label}
-							radius="md"
+							width={450}
+							height={450}
 							className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-110"
 						/>
 					</Box>
