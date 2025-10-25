@@ -177,6 +177,9 @@ export default function TrackModal({ opened, onClose, track, theme }: TrackModal
 									})}
 								</Text>
 								<Text>{track.lpLive.location}</Text>
+								<Text size="sm" c={theme.accent.DEFAULT}>
+									{track.lpLive.disclaimer}
+								</Text>
 							</Box>
 							<ActionIcon
 								tabIndex={-1}

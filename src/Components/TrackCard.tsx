@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, Group, Text, Badge, Box } from "@mantine/core";
+import { Card, Group, Text, Badge, Box, Tooltip } from "@mantine/core";
 import { useState } from "react";
 import type { AlbumTheme } from "@/lib/themes";
 import type { Track } from "@/lib/ListTypes";
@@ -54,7 +54,7 @@ export default function TrackCard({ track, index, theme }: TrackCardProps) {
 
 					<Group gap="md">
 						<Group gap="xs">
-							{track.studioUrl && (
+							{track.__SPOTIFY_URL__ && (
 								<Badge
 									size="sm"
 									variant="filled"
@@ -79,16 +79,18 @@ export default function TrackCard({ track, index, theme }: TrackCardProps) {
 								</Badge>
 							)}
 							{track.lpLive && (
-								<Badge
-									size="sm"
-									variant="filled"
-									style={{
-										background: theme.badges.liveLP,
-										color: theme.text.contrast,
-									}}
-								>
-									LP Live
-								</Badge>
+								<Tooltip label={track.lpLive.disclaimer} hidden={!track.lpLive.disclaimer}>
+									<Badge
+										size="sm"
+										variant="filled"
+										style={{
+											background: theme.badges.liveLP,
+											color: theme.text.contrast,
+										}}
+									>
+										LP Live{track.lpLive.disclaimer ? "*" : ""}
+									</Badge>
+								</Tooltip>
 							)}
 							{track.lpTV && (
 								<Badge

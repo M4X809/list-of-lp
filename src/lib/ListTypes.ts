@@ -2,7 +2,7 @@ export type Track = {
 	id: string;
 	label: string;
 	duration: string;
-	studioUrl: string | null;
+
 	emilyLive:
 		| null
 		| {
@@ -15,6 +15,7 @@ export type Track = {
 		url: string;
 		date: string;
 		location: string;
+		disclaimer?: string;
 	};
 
 	lpTV?: null | {

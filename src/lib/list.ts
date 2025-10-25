@@ -14,7 +14,6 @@ export const albums: Album[] = [
 				id: "minutes-to-midnight_1",
 				label: "Wake",
 				duration: "01:40",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -24,7 +23,6 @@ export const albums: Album[] = [
 				id: "minutes-to-midnight_2",
 				label: "Given Up",
 				duration: "03:09",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -34,7 +32,6 @@ export const albums: Album[] = [
 				id: "minutes-to-midnight_3",
 				label: "Leave Out All the Rest",
 				duration: "03:29",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -44,7 +41,6 @@ export const albums: Album[] = [
 				id: "minutes-to-midnight_4",
 				label: "Bleed It Out",
 				duration: "02:44",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -54,7 +50,6 @@ export const albums: Album[] = [
 				id: "minutes-to-midnight_5",
 				label: "Shadow of the Day",
 				duration: "04:49",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -64,7 +59,6 @@ export const albums: Album[] = [
 				id: "minutes-to-midnight_6",
 				label: "What I've Done",
 				duration: "03:25",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -74,7 +68,6 @@ export const albums: Album[] = [
 				id: "minutes-to-midnight_7",
 				label: "Hands Held High",
 				duration: "03:53",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -84,7 +77,6 @@ export const albums: Album[] = [
 				id: "minutes-to-midnight_8",
 				label: "No More Sorrow",
 				duration: "03:41",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -94,7 +86,6 @@ export const albums: Album[] = [
 				id: "minutes-to-midnight_9",
 				label: "Valentine's Day",
 				duration: "03:16",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -104,7 +95,6 @@ export const albums: Album[] = [
 				id: "minutes-to-midnight_10",
 				label: "In Between",
 				duration: "03:16",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -114,7 +104,6 @@ export const albums: Album[] = [
 				id: "minutes-to-midnight_11",
 				label: "In Pieces",
 				duration: "03:38",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -124,7 +113,6 @@ export const albums: Album[] = [
 				id: "minutes-to-midnight_12",
 				label: "The Little Things Give You Away",
 				duration: "06:23",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -145,7 +133,6 @@ export const albums: Album[] = [
 				id: "meteora_1",
 				label: "Foreword",
 				duration: "00:13",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -155,7 +142,6 @@ export const albums: Album[] = [
 				id: "meteora_2",
 				label: "Don't Stay",
 				duration: "03:07",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -165,7 +151,6 @@ export const albums: Album[] = [
 				id: "meteora_3",
 				label: "Somewhere I Belong",
 				duration: "03:33",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -175,7 +160,6 @@ export const albums: Album[] = [
 				id: "meteora_4",
 				label: "Lying from You",
 				duration: "02:55",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -185,7 +169,6 @@ export const albums: Album[] = [
 				id: "meteora_5",
 				label: "Hit the Floor",
 				duration: "02:44",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -195,7 +178,6 @@ export const albums: Album[] = [
 				id: "meteora_6",
 				label: "Easier to Run",
 				duration: "03:24",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -205,7 +187,6 @@ export const albums: Album[] = [
 				id: "meteora_7",
 				label: "Faint",
 				duration: "02:42",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -215,7 +196,6 @@ export const albums: Album[] = [
 				id: "meteora_8",
 				label: "Figure.09",
 				duration: "03:17",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -225,7 +205,6 @@ export const albums: Album[] = [
 				id: "meteora_9",
 				label: "Breaking the Habit",
 				duration: "03:16",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -235,7 +214,6 @@ export const albums: Album[] = [
 				id: "meteora_10",
 				label: "From the Inside",
 				duration: "02:55",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -245,7 +223,6 @@ export const albums: Album[] = [
 				id: "meteora_11",
 				label: "Nobody's Listening",
 				duration: "02:58",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -255,7 +232,6 @@ export const albums: Album[] = [
 				id: "meteora_12",
 				label: "Session",
 				duration: "02:24",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -265,7 +241,6 @@ export const albums: Album[] = [
 				id: "meteora_13",
 				label: "Numb",
 				duration: "03:05",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -273,7 +248,6 @@ export const albums: Album[] = [
 			},
 		],
 	},
-
 	{
 		id: "hybrid-theory",
 		label: "Hybrid Theory",
@@ -287,7 +261,6 @@ export const albums: Album[] = [
 				id: "hybrid-theory_1",
 				label: "Papercut",
 				duration: "03:04",
-				studioUrl: null,
 				emilyLive: [
 					{
 						url: "https://youtu.be/miQ9Y5UW08g",
@@ -308,8 +281,14 @@ export const albums: Album[] = [
 				id: "hybrid-theory_2",
 				label: "One Step Closer",
 				duration: "02:35",
-				studioUrl: null,
-				emilyLive: null,
+				emilyLive: [
+					{
+						url: "https://www.youtube.com/watch?v=jHBeUlGTfI8",
+						date: "2025-04-26",
+						location: "Austin, Texas, USA",
+						author: "Erynn Halvorson",
+					},
+				],
 				lpLive: null,
 
 				__SPOTIFY_URL__: "https://open.spotify.com/track/4bYLTrlcqctyHck3fjhMgW?si=dd2c47138fed4c4c",
@@ -318,7 +297,6 @@ export const albums: Album[] = [
 				id: "hybrid-theory_3",
 				label: "With You",
 				duration: "03:23",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -328,8 +306,20 @@ export const albums: Album[] = [
 				id: "hybrid-theory_4",
 				label: "Points of Authority",
 				duration: "03:20",
-				studioUrl: null,
-				emilyLive: null,
+				emilyLive: [
+					{
+						url: "https://www.youtube.com/watch?v=tlRFjZ1YBCc",
+						date: "2024-11-08",
+						location: "Dallas, Texas, USA",
+						author: "Erynn Halvorson",
+					},
+					{
+						url: "https://www.youtube.com/watch?v=AaFmfk_GIKA",
+						date: "2025-02-12",
+						location: "Tokyo, Japan",
+						author: "Erynn Halvorson",
+					},
+				],
 				lpLive: null,
 
 				__SPOTIFY_URL__: "https://open.spotify.com/track/214LJVTqrkUOGemWDGHJpr?si=749f11d7cd9a4f56",
@@ -338,9 +328,20 @@ export const albums: Album[] = [
 				id: "hybrid-theory_5",
 				label: "Crawling",
 				duration: "03:29",
-				studioUrl: null,
-				emilyLive: null,
-				lpLive: null,
+				emilyLive: [
+					{
+						url: "https://www.youtube.com/watch?v=ISJRWMSRK5k",
+						date: "2025-06-28",
+						location: "London, United Kingdom",
+						author: "Erynn Halvorson",
+					},
+				],
+				lpLive: {
+					url: "https://www.youtube.com/watch?v=cdaaLiAsQsA",
+					date: "2024-11-15",
+					location: "São Paulo, Brazil",
+					disclaimer: "Not the official live version, but from a recorded Livestream.",
+				},
 
 				__SPOTIFY_URL__: "https://open.spotify.com/track/0X576XiCW9uEtko6f6VkcU?si=0a47dc1d660b4c71",
 			},
@@ -348,7 +349,6 @@ export const albums: Album[] = [
 				id: "hybrid-theory_6",
 				label: "Runaway",
 				duration: "03:03",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -358,7 +358,6 @@ export const albums: Album[] = [
 				id: "hybrid-theory_7",
 				label: "By Myself",
 				duration: "03:09",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -368,8 +367,14 @@ export const albums: Album[] = [
 				id: "hybrid-theory_8",
 				label: "In the End",
 				duration: "03:36",
-				studioUrl: null,
-				emilyLive: null,
+				emilyLive: [
+					{
+						url: "https://www.youtube.com/watch?v=mst1Z4KNV20",
+						date: "2025-06-16",
+						location: "Hannover, Germany",
+						author: "Erynn Halvorson",
+					},
+				],
 				lpLive: null,
 
 				__SPOTIFY_URL__: "https://open.spotify.com/track/7q115ia4fQn9zonjpexWsY?si=1e4cb0fe76244b11",
@@ -378,8 +383,14 @@ export const albums: Album[] = [
 				id: "hybrid-theory_9",
 				label: "A Place for My Head",
 				duration: "03:04",
-				studioUrl: null,
-				emilyLive: null,
+				emilyLive: [
+					{
+						url: "https://www.youtube.com/watch?v=EFDKKyofzGg",
+						date: "2025-04-26",
+						location: "Austin, Texas, USA",
+						author: "Erynn Halvorson",
+					},
+				],
 				lpLive: null,
 
 				__SPOTIFY_URL__: "https://open.spotify.com/track/1B8WdDScvobpFsZLfdmIE1?si=f1b5b6fe0abb4e23",
@@ -388,7 +399,6 @@ export const albums: Album[] = [
 				id: "hybrid-theory_10",
 				label: "Forgotten",
 				duration: "03:04",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -398,7 +408,6 @@ export const albums: Album[] = [
 				id: "hybrid-theory_11",
 				label: "Cure for the Itch",
 				duration: "02:37",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
@@ -408,7 +417,6 @@ export const albums: Album[] = [
 				id: "hybrid-theory_12",
 				label: "Pushing Me Away",
 				duration: "03:11",
-				studioUrl: null,
 				emilyLive: null,
 				lpLive: null,
 
