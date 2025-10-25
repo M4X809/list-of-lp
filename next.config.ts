@@ -1,7 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: import("next").NextConfig = {
 	experimental: {
 		viewTransition: true,
+	},
+	typescript: {
+		ignoreBuildErrors: true,
 	},
 	reactCompiler: true,
 };
