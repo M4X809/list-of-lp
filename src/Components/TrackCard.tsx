@@ -4,6 +4,7 @@ import { Card, Group, Text, Badge, Box } from "@mantine/core";
 import { useState } from "react";
 import type { AlbumTheme } from "@/lib/themes";
 import type { Track } from "@/lib/ListTypes";
+import { useHash } from "@mantine/hooks";
 
 interface TrackCardProps {
 	track: Track;
@@ -13,9 +14,11 @@ interface TrackCardProps {
 
 export default function TrackCard({ track, index, theme }: TrackCardProps) {
 	const [isHovered, setIsHovered] = useState(false);
+	const [_hash, setHash] = useHash();
 
 	return (
 		<Card
+			onClick={() => setHash(`trackModal_${track.id}`)}
 			className="backdrop-blur-sm transition-all duration-300"
 			style={{
 				background: isHovered ? theme.card.backgroundHover : theme.card.background,
@@ -52,19 +55,6 @@ export default function TrackCard({ track, index, theme }: TrackCardProps) {
 				</Group>
 
 				<Group gap="md">
-					<Text
-						size="sm"
-						fw={500}
-						style={{
-							color: theme.text.muted,
-							fontFamily: "monospace",
-							background: theme.background.tertiary,
-							padding: "4px 12px",
-							borderRadius: "6px",
-						}}
-					>
-						{track.duration}
-					</Text>
 					<Group gap="xs">
 						{track.studioUrl && (
 							<Badge
@@ -103,6 +93,19 @@ export default function TrackCard({ track, index, theme }: TrackCardProps) {
 							</Badge>
 						)}
 					</Group>
+					<Text
+						size="sm"
+						fw={500}
+						style={{
+							color: theme.text.muted,
+							fontFamily: "monospace",
+							background: theme.background.tertiary,
+							padding: "4px 12px",
+							borderRadius: "6px",
+						}}
+					>
+						{track.duration}
+					</Text>
 				</Group>
 			</Group>
 		</Card>

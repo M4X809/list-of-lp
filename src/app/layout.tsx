@@ -4,6 +4,10 @@ import { MantineProvider } from "@mantine/core";
 import { ViewTransitions } from "next-view-transitions";
 import { Nunito } from "next/font/google";
 
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
+
 const nunito = Nunito({
 	subsets: ["latin"],
 	weight: ["200", "300", "400", "500", "600", "700", "800", "900"],

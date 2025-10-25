@@ -3,11 +3,14 @@ export type Track = {
 	label: string;
 	duration: string;
 	studioUrl: string | null;
-	emilyLive: null | {
-		url: string;
-		date: string;
-		location: string;
-	};
+	emilyLive:
+		| null
+		| {
+				url: string;
+				date: string;
+				location: string;
+				author: string;
+		  }[];
 	lpLive: null | {
 		url: string;
 		date: string;

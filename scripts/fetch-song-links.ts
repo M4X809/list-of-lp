@@ -102,6 +102,10 @@ export interface SongLinksData {
 	[songId: string]: SongLinks;
 }
 
+export function getSongLink(songId: string): SongLinks {
+	return songLinks[songId];
+}
+
 export const songLinks: SongLinksData = ${JSON.stringify(songLinks, null, 2)};
 `;
 
