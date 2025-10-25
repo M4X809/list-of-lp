@@ -8,7 +8,8 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "eslint .",
-		"fetch-links": "bun run scripts/fetch-song-links.ts"
+		"fetch-links": "bun run scripts/fetch-song-links.ts",
+		"prod": "next start"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^7.1.0",
@@ -31,7 +32,7 @@
 		"@types/node": "^24.6.0",
 		"@types/react": "^19.2.2",
 		"@types/react-dom": "^19.2.2",
-		"babel-plugin-react-compiler": "^19.1.0-rc.3",
+		"babel-plugin-react-compiler": "^1.0.0",
 		"eslint": "^9.36.0",
 		"eslint-plugin-react-hooks": "^5.2.0",
 		"globals": "^16.4.0",

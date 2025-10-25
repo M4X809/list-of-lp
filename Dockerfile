@@ -1,59 +1,53 @@
-# Use bun as the base image
+# Stage 1: Install dependencies with bun
 FROM oven/bun:latest AS deps
-# Install dependencies only when needed
 WORKDIR /app
 
-COPY package.json next.config.ts ./
+# Simplified copy of package files
+COPY package.json bun.lock next.config.ts  ./
+ARG NPM_FONT_AWESOME
+RUN bun install
 
-# Install dependencies including devDependencies
-RUN bun install --frozen-lockfile
-
-# Build the application
-FROM oven/bun:latest AS builder
+# Stage 2: Build Next.js with bun
+FROM node:22-slim AS builder_nextjs
 WORKDIR /app
 
 # Copy dependencies and config files
 COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/package.json ./
-COPY --from=deps /app/next.config.ts ./
+COPY --from=deps /app/package.json ./package.json
+COPY --from=deps /app/bun.lock ./bun.lock
+COPY --from=deps /app/next.config.ts ./next.config.ts
 
 # Copy source code
 COPY . .
 
-
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
-ENV SKIP_ENV_VALIDATION=1
-ENV BETTER_AUTH_TELEMETRY=0
 
+RUN npm run build
+# Check the build output
+RUN ls -la .next
 
-# Build Next.js application
-RUN bun run build
-
-# Production image
-FROM oven/bun:latest AS runner
+# Stage 4: Final runner stage
+FROM node:22-slim AS runner
 WORKDIR /app
 
-ENV NODE_ENV=production
+# Copy Next.js build artifacts and dependencies
+COPY --from=builder_nextjs /app/.next ./.next
+COPY --from=builder_nextjs /app/node_modules ./node_modules
+COPY --from=builder_nextjs /app/public ./public
+COPY --from=builder_nextjs /app/package.json ./package.json
+COPY --from=builder_nextjs /app/next.config.ts ./next.config.ts
+# Copy src folder for runtime access
+COPY --from=builder_nextjs /app/src ./src
 
-
-# Copy Next.js build artifacts
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/next.config.ts ./
 
 ENV TZ="CET"
 ENV LANG="de_DE.UTF-8"
 ENV LANGUAGE="de_DE:de"
 ENV LC_ALL="de_DE.UTF-8"
-ENV PORT=3000
 
 EXPOSE 3000
 
+ENV PORT=3000
 
-# Start the application
-CMD ["bun", "server.js"]
-
+CMD ["npm", "run", "prod"]

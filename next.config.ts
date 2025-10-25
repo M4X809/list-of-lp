@@ -1,5 +1,4 @@
 const nextConfig: import("next").NextConfig = {
-	output: "standalone",
 	experimental: {
 		viewTransition: true,
 	},
