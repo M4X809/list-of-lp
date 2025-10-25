@@ -5,6 +5,7 @@ WORKDIR /app
 # Simplified copy of package files
 COPY package.json bun.lock next.config.ts  ./
 ARG NPM_FONT_AWESOME
+ARG URL
 RUN bun install
 
 # Stage 2: Build Next.js with bun

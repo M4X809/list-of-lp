@@ -4,6 +4,9 @@ import { cookies } from "next/headers";
 
 // Absolute URL redirect is required by Next.js middleware & API routes
 export async function GET(request: NextRequest) {
+	const urlENV = process.env.URL;
+	console.log("🚀 ~ route.tsx:9 ~ GET ~ urlENV:", urlENV);
+
 	const url = new URL(request.url);
 	console.log("🚀 ~ route.tsx:8 ~ GET ~ url:", url);
 	const randParam = url.searchParams.get("rand");
