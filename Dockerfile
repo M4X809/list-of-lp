@@ -3,7 +3,7 @@ FROM oven/bun:latest AS deps
 # Install dependencies only when needed
 WORKDIR /app
 
-COPY package.json bunfig.toml next.config.ts ./
+COPY package.json next.config.ts ./
 
 # Install dependencies including devDependencies
 RUN bun install --frozen-lockfile
