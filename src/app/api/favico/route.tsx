@@ -26,6 +26,8 @@ export async function GET(request: NextRequest) {
 	}
 	const album = availableAlbums[randomIndex];
 	console.log("🚀 ~ route.tsx:25 ~ GET ~ album:", album);
+	cookieStore.set("lastImage", album.image);
+
 	// Ensure image path starts with a slash
 	const imagePath = album.image.startsWith("/") ? album.image : `/${album.image}`;
 	console.log("🚀 ~ route.tsx:29 ~ GET ~ imagePath:", imagePath);
