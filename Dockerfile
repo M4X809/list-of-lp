@@ -6,10 +6,11 @@ FROM base AS deps
 WORKDIR /app
 
 # Copy dependency files
-COPY package.json bun.lock ./
+COPY package.json ./
+COPY bun.lock* ./
 
 # Install dependencies
-RUN bun install --frozen-lockfile
+RUN bun install
 
 # Build the application
 FROM base AS builder
