@@ -32,7 +32,7 @@ ENV BETTER_AUTH_TELEMETRY=0
 RUN bun run build
 
 # Production image
-FROM base AS runner
+FROM oven/bun:latest AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
