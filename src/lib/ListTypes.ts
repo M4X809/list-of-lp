@@ -17,6 +17,11 @@ export type Track = {
 		location: string;
 	};
 
+	lpTV?: null | {
+		url: string;
+		date: string;
+	};
+
 	// this is the spotify url for the album
 	__SPOTIFY_URL__: string;
 };

@@ -193,6 +193,43 @@ export default function TrackModal({ opened, onClose, track, theme }: TrackModal
 						</Group>
 					</>
 				)}
+
+				{track.lpTV && (
+					<>
+						<Divider
+							color={theme.accent.DEFAULT}
+							size={"lg"}
+							label={
+								<Title c={theme.accent.DEFAULT} order={3}>
+									LP TV
+								</Title>
+							}
+						/>
+						<Group justify="space-between" align="center">
+							<Box style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+								<Text>
+									{new Date(track.lpTV.date).toLocaleDateString("en-US", {
+										year: "numeric",
+										month: "long",
+										day: "numeric",
+									})}
+								</Text>
+							</Box>
+							<ActionIcon
+								tabIndex={-1}
+								variant="filled"
+								color={"#FF0000"}
+								size="lg"
+								component={Link}
+								href={track.lpTV.url}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FontAwesomeIcon icon={faYoutube} />
+							</ActionIcon>
+						</Group>
+					</>
+				)}
 			</Stack>
 		</Modal>
 	);

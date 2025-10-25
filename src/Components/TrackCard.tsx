@@ -5,6 +5,7 @@ import { useState } from "react";
 import type { AlbumTheme } from "@/lib/themes";
 import type { Track } from "@/lib/ListTypes";
 import TrackModal from "./TrackModal";
+import { twMerge } from "tailwind-merge";
 
 interface TrackCardProps {
 	track: Track;
@@ -13,23 +14,19 @@ interface TrackCardProps {
 }
 
 export default function TrackCard({ track, index, theme }: TrackCardProps) {
-	const [isHovered, setIsHovered] = useState(false);
 	const [modalOpened, setModalOpened] = useState(false);
 
 	return (
 		<>
 			<Card
 				onClick={() => setModalOpened(true)}
-				className="backdrop-blur-sm transition-all duration-300"
-				style={{
-					background: isHovered ? theme.card.backgroundHover : theme.card.background,
-					border: `1px solid ${isHovered ? theme.border.light : theme.card.border}`,
-					cursor: "pointer",
-					// transform: isHovered ? "translateY(-2px)" : "translateY(0)",
-					boxShadow: isHovered ? `0 8px 24px ${theme.primary.DEFAULT}30` : "none",
-				}}
-				onMouseEnter={() => setIsHovered(true)}
-				onMouseLeave={() => setIsHovered(false)}
+				className={twMerge(
+					"transition-all duration-300 hover:scale-105 hover:cursor-pointer hover:shadow-lg",
+					theme.card.background,
+					theme.card.backgroundHover,
+					theme.card.border,
+				)}
+				style={{}}
 			>
 				<Group justify="space-between" align="center">
 					<Group gap="md">
@@ -91,6 +88,18 @@ export default function TrackCard({ track, index, theme }: TrackCardProps) {
 									}}
 								>
 									LP Live
+								</Badge>
+							)}
+							{track.lpTV && (
+								<Badge
+									size="sm"
+									variant="filled"
+									style={{
+										background: theme.badges.lpTV,
+										color: theme.text.contrast,
+									}}
+								>
+									LP TV
 								</Badge>
 							)}
 						</Group>

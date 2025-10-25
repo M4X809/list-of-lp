@@ -45,6 +45,7 @@ export interface AlbumTheme {
 		studio: string;
 		liveEmily: string;
 		liveLP: string;
+		lpTV: string;
 	};
 	// Card styling
 	card: {
@@ -95,11 +96,12 @@ const themes: Record<string, AlbumTheme> = {
 			studio: "#95121d",
 			liveEmily: "#ec6672",
 			liveLP: "#8C786C",
+			lpTV: "#C4729F",
 		},
 		card: {
-			background: "rgba(61, 61, 57, 0.3)",
-			backgroundHover: "rgba(71, 9, 14, 0.4)",
-			border: "#3D3D39",
+			background: "bg-[#3D3D39]/60",
+			backgroundHover: "hover:bg-[#47090E]/60",
+			border: "border-[#3D3D39] border-2",
 		},
 	},
 	meteora: {
@@ -142,11 +144,12 @@ const themes: Record<string, AlbumTheme> = {
 			studio: "#8B7B65",
 			liveEmily: "#bbb0a1",
 			liveLP: "#9A8B71",
+			lpTV: "#F9DDFC",
 		},
 		card: {
-			background: "rgba(85, 73, 60, 0.3)",
-			backgroundHover: "rgba(139, 123, 101, 0.4)",
-			border: "#55493C",
+			background: "bg-[#55493C]/60",
+			backgroundHover: "hover:bg-[#8B7B65]/30",
+			border: "border-[#55493C]",
 		},
 	},
 	"minutes-to-midnight": {
@@ -189,11 +192,12 @@ const themes: Record<string, AlbumTheme> = {
 			studio: "#77716F",
 			liveEmily: "#928d8b",
 			liveLP: "#A09D9C",
+			lpTV: "#C4729F",
 		},
 		card: {
-			background: "rgba(71, 68, 67, 0.3)",
-			backgroundHover: "rgba(119, 113, 111, 0.4)",
-			border: "#474443",
+			background: "bg-[#474443]/60",
+			backgroundHover: "hover:bg-[#77716F]/30",
+			border: "border-[#474443]",
 		},
 	},
 };
