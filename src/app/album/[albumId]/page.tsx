@@ -42,6 +42,7 @@ export default async function AlbumDetail({ params }: { params: Promise<{ albumI
 			className="min-h-screen"
 			style={{
 				background: theme.background.gradient,
+				minHeight: "100vh",
 				viewTransitionName: `album-card-background-${album.id}`,
 			}}
 		>

@@ -37,6 +37,7 @@ export default function AlbumCard({ album }: { album: Album }) {
 		>
 			<Card
 				component={Link}
+				prefetch={true}
 				href={`/album/${album.id}`}
 				className="cursor-pointer"
 				style={{
