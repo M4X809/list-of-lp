@@ -248,6 +248,55 @@ const themes: Record<string, AlbumTheme> = {
 			border: "border-[#565858]",
 		},
 	},
+    // MARK: Living Things
+    "living-things": {
+        primary: {
+			DEFAULT: "#5C473A",
+			light: "#8B6F5E",
+			dark: "#3D2E24",
+			100: "#F5EDE7",
+			500: "#5C473A",
+			900: "#1A120E",
+		},
+		secondary: {
+			DEFAULT: "#D4C4B0",
+			light: "#E8DDD0",
+			dark: "#A89379",
+		},
+		accent: {
+			DEFAULT: "#9B5C42",
+			light: "#C27D5F",
+			dark: "#6B3F2E",
+		},
+		background: {
+			primary: "#2B2118",
+			secondary: "#3D2E24",
+			tertiary: "#5C473A",
+			gradient: "linear-gradient(135deg, #2B2118 0%, #3D2E24 40%, #5C473A 100%)",
+		},
+		text: {
+			primary: "#F5EDE7",
+			secondary: "#E8DDD0",
+			muted: "#D4C4B0",
+			contrast: "#FFFFFF",
+		},
+		border: {
+			DEFAULT: "#5C473A",
+			light: "#8B6F5E",
+			focus: "#D4C4B0",
+		},
+		badges: {
+			studio: "#5C473A",
+			liveEmily: "#9B5C42",
+			liveLP: "#8B6F5E",
+			lpTV: "#D4C4B0",
+		},
+		card: {
+			background: "bg-[#5C473A]/60",
+			backgroundHover: "hover:bg-[#8B6F5E]/40",
+			border: "border-[#5C473A]",
+		},
+	},
 };
 
 export const getThemeColors = (albumId: string): AlbumTheme => {

@@ -1,6 +1,140 @@
 import type { Album } from "./ListTypes";
 
 export const albums: Album[] = [
+    
+	// MARK: Living Things
+	{
+		id: "living-things",
+		label: "Living Things",
+		releaseDate: "2012-06-20",
+		image: "/living_things.jpg",
+		url: "/living-things",
+		description:
+			"Living Things is the fifth studio album by American rock band Linkin Park, released on June 20, 2012. The album combines elements from the band's previous styles, blending electronic music with alternative rock, and features a more personal lyrical approach.",
+		tracks: [
+			{
+				id: "living-things_1",
+				label: "Lost in the Echo",
+				duration: "03:26",
+				emilyLive: [
+                    {
+                        author: "Erynn Halvorson",
+                        url: "https://www.youtube.com/watch?v=LnrBojAgqCg",
+                        date: "2025-11-03",
+                        location: "Paris, France",
+                    }
+                ],
+				lpLive: null,
+				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/2oNYsdCasRRlz1shXFAz7D?si=0c97a75174ea4a7b",
+			},
+			{
+				id: "living-things_2",
+				label: "In My Remains",
+				duration: "03:21",
+				emilyLive: null,
+				lpLive: null,
+				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/00KfIFi2TpAaQGPbRbFbKJ?si=b4e0717bf39649bd",
+			},
+			{
+				id: "living-things_3",
+				label: "Burn It Down",
+				duration: "03:51",
+				emilyLive: [{
+                    author: "Erynn Halvorson",
+                    url: "https://www.youtube.com/watch?v=k_xnaGtNS_g",
+                    date: "2025-09-20",
+                    location: "London, United Kingdom",
+                }],
+				lpLive: null,
+				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/7oVEtyuv9NBmnytsCIsY5I?si=5bb27be35e354da4",
+			},
+			{
+				id: "living-things_4",
+				label: "Lies Greed Misery",
+				duration: "02:27",
+				emilyLive: [
+                    {
+                        author: "Ross McAllister",
+                        url: "https://www.youtube.com/watch?v=GFJKa6qcpCc",
+                        date: "2025-08-5",
+                        location: "Boston, USA",
+                    }
+                ],
+				lpLive: null,
+				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/3aZQQWGNShP6IzzaprPlFX?si=ada9c45b1671406f",
+			},
+			{
+				id: "living-things_5",
+				label: "I'll Be Gone",
+				duration: "03:32",
+				emilyLive: null,
+				lpLive: null,
+				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/3cQGb2POE359G9WH81bF60?si=becd450a974e4838",
+			},
+			{
+				id: "living-things_6",
+				label: "Castle of Glass",
+				duration: "03:26",
+				emilyLive: [{
+                    author: "Erynn Halvorson",
+                    url: "https://www.youtube.com/watch?v=24y0QqqULVk",
+                    date: "2025-09-20",
+                    location: "London, United Kingdom",
+                }],
+				lpLive: null,
+				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/1r1fPuhj9H4VdXr7OK6FL5?si=da3f4f5f84ff4477",
+			},
+			{
+				id: "living-things_7",
+				label: "Victimized",
+				duration: "01:47",
+				emilyLive: null,
+				lpLive: null,
+				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/35jdp4bY3CABKBroODRq7Y?si=d65d04815db64592",
+			},
+			{
+				id: "living-things_8",
+				label: "Roads Untraveled",
+				duration: "03:50",
+				emilyLive: null,
+				lpLive: null,
+				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/1dYw8HTRJnFpeEeMtXj99a?si=1e21f9e8ac2b4e08",
+			},
+			{
+				id: "living-things_9",
+				label: "Skin to Bone",
+				duration: "02:49",
+				emilyLive: null,
+				lpLive: null,
+				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/4JqgUZ4yZqjeEmgJNsuUjX?si=9cf6743a48ac4ceb",
+			},
+			{
+				id: "living-things_10",
+				label: "Until It Breaks",
+				duration: "03:44",
+				emilyLive: null,
+				lpLive: null,
+				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/2ww2xnkptug8KwF6XzEwMq?si=03d8bf4f6a4c409b",
+			},
+			{
+				id: "living-things_11",
+				label: "Tinfoil",
+				duration: "01:12",
+				emilyLive: null,
+				lpLive: null,
+				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/5zoETs17V8PJkeGmB0Iagw?si=7e30333e81ea43a1",
+			},
+			{
+				id: "living-things_12",
+				label: "Powerless",
+				duration: "03:45",
+				emilyLive: null,
+				lpLive: null,
+				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/4zNk347FJz4yDDcjUhJJMI?si=09a0295095b64486",
+			},
+		],
+	},
+    // MARK: A Thousand Suns
 	{
 		id: "a-thousand-suns",
 		label: "A Thousand Suns",
@@ -148,6 +282,7 @@ export const albums: Album[] = [
 			},
 		],
 	},
+    // MARK: Minutes to Midnight
 	{
 		id: "minutes-to-midnight",
 		label: "Minutes to Midnight",
@@ -267,6 +402,7 @@ export const albums: Album[] = [
 			},
 		],
 	},
+    // MARK: Meteora
 	{
 		id: "meteora",
 		label: "Meteora",
@@ -395,6 +531,7 @@ export const albums: Album[] = [
 			},
 		],
 	},
+    // MARK: Hybrid Theory
 	{
 		id: "hybrid-theory",
 		label: "Hybrid Theory",
@@ -571,4 +708,7 @@ export const albums: Album[] = [
 			},
 		],
 	},
+
+
+
 ];

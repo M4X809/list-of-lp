@@ -29,3 +29,6 @@ A modern web application showcasing the complete discography of Linkin Park, bui
 ## License
 
 MIT
+
+Up from the bottom live, partial
+https://www.youtube.com/watch?v=I08GK2s64Cc
