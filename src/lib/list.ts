@@ -1,7 +1,6 @@
 import type { Album } from "./ListTypes";
 
 export const albums: Album[] = [
-    
 	// MARK: Living Things
 	{
 		id: "living-things",
@@ -17,13 +16,13 @@ export const albums: Album[] = [
 				label: "Lost in the Echo",
 				duration: "03:26",
 				emilyLive: [
-                    {
-                        author: "Erynn Halvorson",
-                        url: "https://www.youtube.com/watch?v=LnrBojAgqCg",
-                        date: "2025-11-03",
-                        location: "Paris, France",
-                    }
-                ],
+					{
+						author: "Erynn Halvorson",
+						url: "https://www.youtube.com/watch?v=LnrBojAgqCg",
+						date: "2025-11-03",
+						location: "Paris, France",
+					},
+				],
 				lpLive: null,
 				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/2oNYsdCasRRlz1shXFAz7D?si=0c97a75174ea4a7b",
 			},
@@ -39,12 +38,14 @@ export const albums: Album[] = [
 				id: "living-things_3",
 				label: "Burn It Down",
 				duration: "03:51",
-				emilyLive: [{
-                    author: "Erynn Halvorson",
-                    url: "https://www.youtube.com/watch?v=k_xnaGtNS_g",
-                    date: "2025-09-20",
-                    location: "London, United Kingdom",
-                }],
+				emilyLive: [
+					{
+						author: "Erynn Halvorson",
+						url: "https://www.youtube.com/watch?v=k_xnaGtNS_g",
+						date: "2025-09-20",
+						location: "London, United Kingdom",
+					},
+				],
 				lpLive: null,
 				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/7oVEtyuv9NBmnytsCIsY5I?si=5bb27be35e354da4",
 			},
@@ -53,13 +54,13 @@ export const albums: Album[] = [
 				label: "Lies Greed Misery",
 				duration: "02:27",
 				emilyLive: [
-                    {
-                        author: "Ross McAllister",
-                        url: "https://www.youtube.com/watch?v=GFJKa6qcpCc",
-                        date: "2025-08-5",
-                        location: "Boston, USA",
-                    }
-                ],
+					{
+						author: "Ross McAllister",
+						url: "https://www.youtube.com/watch?v=GFJKa6qcpCc",
+						date: "2025-08-5",
+						location: "Boston, USA",
+					},
+				],
 				lpLive: null,
 				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/3aZQQWGNShP6IzzaprPlFX?si=ada9c45b1671406f",
 			},
@@ -75,12 +76,14 @@ export const albums: Album[] = [
 				id: "living-things_6",
 				label: "Castle of Glass",
 				duration: "03:26",
-				emilyLive: [{
-                    author: "Erynn Halvorson",
-                    url: "https://www.youtube.com/watch?v=24y0QqqULVk",
-                    date: "2025-09-20",
-                    location: "London, United Kingdom",
-                }],
+				emilyLive: [
+					{
+						author: "Erynn Halvorson",
+						url: "https://www.youtube.com/watch?v=24y0QqqULVk",
+						date: "2025-09-20",
+						location: "London, United Kingdom",
+					},
+				],
 				lpLive: null,
 				__SPOTIFY_URL__: "https://open.spotify.com/intl-de/track/1r1fPuhj9H4VdXr7OK6FL5?si=da3f4f5f84ff4477",
 			},
@@ -134,7 +137,7 @@ export const albums: Album[] = [
 			},
 		],
 	},
-    // MARK: A Thousand Suns
+	// MARK: A Thousand Suns
 	{
 		id: "a-thousand-suns",
 		label: "A Thousand Suns",
@@ -282,7 +285,7 @@ export const albums: Album[] = [
 			},
 		],
 	},
-    // MARK: Minutes to Midnight
+	// MARK: Minutes to Midnight
 	{
 		id: "minutes-to-midnight",
 		label: "Minutes to Midnight",
@@ -402,7 +405,7 @@ export const albums: Album[] = [
 			},
 		],
 	},
-    // MARK: Meteora
+	// MARK: Meteora
 	{
 		id: "meteora",
 		label: "Meteora",
@@ -443,8 +446,25 @@ export const albums: Album[] = [
 				id: "meteora_4",
 				label: "Lying from You",
 				duration: "02:55",
-				emilyLive: null,
-				lpLive: null,
+				emilyLive: [
+					{
+						url: "https://www.youtube.com/watch?v=Q9VSKgmhhrw",
+						date: "2025-05-06",
+						location: "Raleigh/North Carolina/USA",
+						author: "Erynn Halvorson",
+					},
+					{
+						url: "https://www.youtube.com/watch?v=24rM6WCVx8g",
+						date: "2025-09-06",
+						location: "Phoenix/Arizona/USA",
+						author: "Erynn Halvorson",
+					},
+				],
+				lpLive: {
+					date: "2026-05-12",
+					location: "Mumbai/India",
+					url: "https://www.youtube.com/watch?v=Ry_koauoyMQ",
+				},
 
 				__SPOTIFY_URL__: "https://open.spotify.com/track/4zP2e2aIzOZGEFTq1MDJmm?si=a7951a3a01e740ac",
 			},
@@ -531,7 +551,7 @@ export const albums: Album[] = [
 			},
 		],
 	},
-    // MARK: Hybrid Theory
+	// MARK: Hybrid Theory
 	{
 		id: "hybrid-theory",
 		label: "Hybrid Theory",
@@ -708,7 +728,4 @@ export const albums: Album[] = [
 			},
 		],
 	},
-
-
-
 ];

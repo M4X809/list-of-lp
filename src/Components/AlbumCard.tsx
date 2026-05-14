@@ -61,6 +61,7 @@ export default function AlbumCard({ album }: { album: Album }) {
 				>
 					<Box>
 						<Image
+							loading="eager"
 							src={image}
 							alt={label}
 							width={450}

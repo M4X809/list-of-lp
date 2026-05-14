@@ -8,10 +8,7 @@ export default function HomePage() {
 			<Box className="min-h-screen bg-gray-900">
 				<Container size="xl" className="py-16">
 					<Box className="mb-12 text-center text-pretty">
-						<Title
-							order={1}
-							className="mb-4 bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-6xl font-bold text-transparent"
-						>
+						<Title order={1} className="mb-4 text-6xl font-bold text-white">
 							Linkin Park Albums
 						</Title>
 						<Text size="xl" className="text-gray-400">
